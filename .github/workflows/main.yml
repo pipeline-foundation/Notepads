@@ -1,6 +1,8 @@
 name:  Build
 
-on: [push, pull_request, workflow_dispatch]
+on:
+  push:
+  pull_request:
 
 jobs:
 
@@ -27,8 +29,7 @@ jobs:
       with:
         fetch-depth: 50
 
-    - if: github.event_name == 'push'
-      name: Cache SonarCloud packages
+    - name: Cache SonarCloud packages
       id: cache_sonar_packages
       uses: actions/cache@v2
       with:
@@ -36,8 +37,7 @@ jobs:
         key: ${{ runner.os }}-sonar
         restore-keys: ${{ runner.os }}-sonar
 
-    - if: github.event_name == 'push'
-      name: Cache SonarCloud scanner
+    - name: Cache SonarCloud scanner
       id: cache_sonar_scanner
       uses: actions/cache@v2
       with:
@@ -45,8 +45,8 @@ jobs:
         key: ${{ runner.os }}-sonar-scanner
         restore-keys: ${{ runner.os }}-sonar-scanner
 
-    - if: github.event_name == 'push' && steps.cache_sonar_scanner.outputs.cache-hit != 'true'
-      name: Install SonarCloud scanner
+    - name: Install SonarCloud scanner
+      if: steps.cache_sonar_scanner.outputs.cache-hit != 'true'
       id: install_sonar_scanner
       shell: powershell
       run: |
@@ -61,8 +61,8 @@ jobs:
         $LOWERCASE_OWNER = "${{ github.repository_owner }}".ToLower()
         echo "::set-output name=owner_name::$LOWERCASE_OWNER"
 
-    - if: github.event_name == 'push'
-      name: Initialize SonarCloud scanner
+
+    - name: Initialize SonarCloud scanner
       id: init_sonar_scanner
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
@@ -89,8 +89,7 @@ jobs:
         Appx_Package_Build_Mode: StoreUpload
         Configuration: ${{ matrix.configuration }}
         
-    - if: github.event_name == 'push'
-      name: Send SonarCloud results
+    - name: Send SonarCloud results
       id: send_sonar_results
       env:
         GITHUB_TOKEN: ${{ secrets.SONAR_TOKEN }}
