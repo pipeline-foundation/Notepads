@@ -180,7 +180,7 @@ jobs:
           UAP_APPX_PACKAGE_BUILD_MODE: StoreUpload
           APPX_BUNDLE: Always
           APPX_PACKAGE_SIGNING_ENABLED: ${{ steps.step_conditionals_handler.outputs.is_push_to_master }}
-          APPX_BUNDLE_PLATFORMS: x86|x64|arm64
+          APPX_BUNDLE_PLATFORMS: x86|x64|ARM64
           ARTIFACTS_DIR: ${{ github.workspace }}\Artifacts
           PACKAGE_CERTIFICATE_KEYFILE: ${{ github.workspace }}\cert.pfx
           PACKAGE_CERTIFICATE_PASSWORD: ${{ secrets.PACKAGE_CERTIFICATE_PWD }}
