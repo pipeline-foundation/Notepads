@@ -207,7 +207,7 @@ jobs:
           path: Artifacts/
 
       - name: Upload build artifacts
-        id: upload_artifacts
+        id: upload_app_xaml_cs
         uses: actions/upload-artifact@v1
         with:
           name: App.xaml.cs
