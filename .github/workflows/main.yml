@@ -174,7 +174,8 @@ jobs:
           /p:AppxBundlePlatforms=$env:APPX_BUNDLE_PLATFORMS `
           /p:AppxPackageDir=$env:ARTIFACTS_DIR `
           /p:PackageCertificateKeyFile=$env:PACKAGE_CERTIFICATE_KEYFILE `
-          /p:PackageCertificatePassword=$env:PACKAGE_CERTIFICATE_PASSWORD
+          /p:PackageCertificatePassword=$env:PACKAGE_CERTIFICATE_PASSWORD `
+          /p:AppCenterSecret=$env:APP_CENTER_SECRET
         env:
           PLATFORM: x64
           UAP_APPX_PACKAGE_BUILD_MODE: StoreUpload
@@ -184,6 +185,7 @@ jobs:
           ARTIFACTS_DIR: ${{ github.workspace }}\Artifacts
           PACKAGE_CERTIFICATE_KEYFILE: ${{ github.workspace }}\cert.pfx
           PACKAGE_CERTIFICATE_PASSWORD: ${{ secrets.PACKAGE_CERTIFICATE_PWD }}
+          APP_CENTER_SECRET: ${{ secrets.APP_CENTER_SECRET }}
 
       - if: steps.step_conditionals_handler.outputs.is_not_pr == 'true'
         name: Send SonarCloud results
@@ -203,6 +205,13 @@ jobs:
         with:
           name: Build artifacts
           path: Artifacts/
+
+      - name: Upload build artifacts
+        id: upload_artifacts
+        uses: actions/upload-artifact@v1
+        with:
+          name: App.xaml.cs
+          path: src/Notepads/App.xaml.cs
 
   cd:
     # "This job will execute when the workflow is triggered on a 'push event', the target branch is 'master' and the commit is intended to be a release."
