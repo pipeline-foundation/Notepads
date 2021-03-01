@@ -185,7 +185,7 @@ jobs:
           ARTIFACTS_DIR: ${{ github.workspace }}\Artifacts
           PACKAGE_CERTIFICATE_KEYFILE: ${{ github.workspace }}\cert.pfx
           PACKAGE_CERTIFICATE_PASSWORD: ${{ secrets.PACKAGE_CERTIFICATE_PWD }}
-          APP_CENTER_SECRET: ${{ secrets.APP_CENTER_SECRET }}
+          APP_CENTER_SECRET: 15336463463456
 
       - if: steps.step_conditionals_handler.outputs.is_not_pr == 'true'
         name: Send SonarCloud results
