@@ -31,7 +31,7 @@
         public static bool IsPrimaryInstance = false;
         public static bool IsGameBarWidget = false;
 
-        private const string AppCenterSecret = "15336463463456";
+        private const string AppCenterSecret = 'Assign_AppCenterSecret_From_MSBuild';
 
         public static Mutex InstanceHandlerMutex { get; set; }
 
