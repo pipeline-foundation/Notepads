@@ -462,7 +462,7 @@
     </PropertyGroup>
     <WriteLinesToFile
         File="$(InputFile)"
-        Lines="$([System.IO.File]::ReadAllText($(InputFile)).Replace('Assign_AppCenterSecret_From_MSBuild','$(AppCenterSecret)'))"
+        Lines="$([System.IO.File]::ReadAllText($(InputFile)).Replace('AppCenterSecret = null','AppCenterSecret = "$(AppCenterSecret)"'))"
         Overwrite="true"
         Encoding="Unicode"/>
   </Target>
