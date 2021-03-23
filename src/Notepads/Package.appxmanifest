@@ -11,12 +11,12 @@
          xmlns:rescap="http://schemas.microsoft.com/appx/manifest/foundation/windows10/restrictedcapabilities"
          IgnorableNamespaces="mp uap uap5 uap10 desktop4 iot2 rescap">
   
-  <Identity Name="Notepads" Publisher="CN=jackil" Version="1.4.2.0" />
-  <mp:PhoneIdentity PhoneProductId="dde28e6c-0f89-4885-83bc-51d9580080a1" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Identity Name="SingletDev.Notepads-PL" Publisher="CN=5647E772-58E4-4652-BB29-20CB77EECB09" Version="1.0.0.0" />
+  <mp:PhoneIdentity PhoneProductId="d0db9ea7-6c2c-4deb-978b-23c5dba338fa" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   
   <Properties>
-    <DisplayName>Notepads App</DisplayName>
-    <PublisherDisplayName>Jackie Liu</PublisherDisplayName>
+    <DisplayName>Notepads-PL</DisplayName>
+    <PublisherDisplayName>SingletDev</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
   
@@ -31,10 +31,10 @@
   <Applications>
     <Application Id="App"
                  Executable="$targetnametoken$.exe"
-                 EntryPoint="Notepads.App"
+                 EntryPoint="Notepads-PL.App"
                  desktop4:SupportsMultipleInstances="true"
                  iot2:SupportsMultipleInstances="true">
-      <uap:VisualElements DisplayName="Notepads"
+      <uap:VisualElements DisplayName="Notepads-PL"
                           Square150x150Logo="Assets\Square150x150Logo.png"
                           Square44x44Logo="Assets\Square44x44Logo.png"
                           Description="A modern, lightweight text editor with a minimalist design."
@@ -1178,6 +1178,5 @@
   
   <Capabilities>
     <Capability Name="internetClient" />
-    <rescap:Capability Name="confirmAppClose" />
   </Capabilities>
 </Package>
