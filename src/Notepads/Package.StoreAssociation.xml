@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <StoreAssociation xmlns="http://schemas.microsoft.com/appx/2010/storeassociation">
-  <Publisher>CN=5647E772-58E4-4652-BB29-20CB77EECB09</Publisher>
-  <PublisherDisplayName>SingletDev</PublisherDisplayName>
-  <DeveloperAccountType>AAD</DeveloperAccountType>
+  <Publisher>CN=40E66D07-5A3A-4954-9CA3-A1EB15ED0804</Publisher>
+  <PublisherDisplayName>Jackie Liu</PublisherDisplayName>
+  <DeveloperAccountType>MSA</DeveloperAccountType>
   <GeneratePackageHash>http://www.w3.org/2001/04/xmlenc#sha256</GeneratePackageHash>
   <SupportedLocales>
     <Language Code="af" InMinimumRequirementSet="true" />
@@ -361,11 +361,19 @@
     <Language Code="zu-za" InMinimumRequirementSet="true" />
   </SupportedLocales>
   <ProductReservedInfo>
-    <MainPackageIdentityName>SingletDev.Notepads-PL</MainPackageIdentityName>
+    <MainPackageIdentityName>19282JackieLiu.Notepads-Beta</MainPackageIdentityName>
     <ReservedNames>
-      <ReservedName>Notepads-PL</ReservedName>
+      <ReservedName>Notepads - Beta</ReservedName>
+      <ReservedName>Notepads App</ReservedName>
+      <ReservedName>NotepadsApp</ReservedName>
+      <ReservedName>Notepads Pro</ReservedName>
+      <ReservedName>Notepads Editor</ReservedName>
+      <ReservedName>Windows Notepads</ReservedName>
+      <ReservedName>Notepads Text Editor</ReservedName>
+      <ReservedName>Notepads - Text Editor</ReservedName>
+      <ReservedName>Notepads Widget</ReservedName>
     </ReservedNames>
   </ProductReservedInfo>
   <AccountPackageIdentityNames />
-  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9N5GP08XX2SM" />
+  <PackageInfoList LandingUrl="https://developer.microsoft.com/dashboard/Application?appId=9NHL4NSC67WM" />
 </StoreAssociation>
