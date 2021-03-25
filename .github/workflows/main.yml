@@ -51,7 +51,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
       - if: steps.step_conditionals_handler.outputs.is_push_to_master == 'true'
-        name: Bump GH tag
+        name: Bump GitHub tag
         id: tag_generator
         uses: mathieudutour/github-tag-action@v5
         with: 
